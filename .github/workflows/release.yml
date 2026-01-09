@@ -51,6 +51,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Sync version from tag
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "Setting version to $VERSION"
+          npm version $VERSION --no-git-tag-version --workspace=packages/core
+
       - name: Copy README to package
         run: cp README.md packages/core/README.md
 
