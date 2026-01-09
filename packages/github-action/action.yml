@@ -1,0 +1,100 @@
+name: 'React Perf Contracts'
+description: 'Performance contract validation for React components'
+author: 'Your Organization'
+
+branding:
+  icon: 'zap'
+  color: 'yellow'
+
+inputs:
+  test-command:
+    description: 'Command to run performance tests'
+    required: false
+    default: 'npm run test:perf'
+
+  working-directory:
+    description: 'Directory to run commands in'
+    required: false
+    default: '.'
+
+  baseline-source:
+    description: 'Source for baseline data: "artifacts", "branch", or "file"'
+    required: false
+    default: 'artifacts'
+
+  baseline-artifact:
+    description: 'Artifact name to download for baseline'
+    required: false
+    default: 'perf-contracts-baseline'
+
+  upload-artifacts:
+    description: 'Upload results as artifacts for future comparisons'
+    required: false
+    default: 'true'
+
+  artifact-name:
+    description: 'Name for uploaded artifacts'
+    required: false
+    default: 'perf-contracts-results'
+
+  artifact-retention-days:
+    description: 'Days to retain artifacts'
+    required: false
+    default: '30'
+
+  comment-on-pr:
+    description: 'Post results as PR comment'
+    required: false
+    default: 'true'
+
+  comment-threshold:
+    description: 'Minimum status to comment: "all", "warn", "fail"'
+    required: false
+    default: 'all'
+
+  fail-on-regression:
+    description: 'Fail the action on regression detection'
+    required: false
+    default: 'true'
+
+  fail-on-budget-exceeded:
+    description: 'Fail when contract budgets are exceeded'
+    required: false
+    default: 'true'
+
+  bundle-stats-file:
+    description: 'Path to webpack/vite stats.json for correlation'
+    required: false
+
+  include-suggestions:
+    description: 'Include fix suggestions in output'
+    required: false
+    default: 'true'
+
+  github-token:
+    description: 'GitHub token for PR comments'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  status:
+    description: 'Overall status: "pass", "warn", or "fail"'
+
+  report-path:
+    description: 'Path to generated report file'
+
+  summary:
+    description: 'Brief summary of results'
+
+  components-tested:
+    description: 'Number of components tested'
+
+  budgets-exceeded:
+    description: 'Number of budget violations'
+
+  regressions-detected:
+    description: 'Number of regressions detected'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

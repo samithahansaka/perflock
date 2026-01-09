@@ -1,0 +1,90 @@
+{
+  "name": "@samithahansaka/perflock",
+  "version": "0.1.0",
+  "description": "Performance contracts for React components - lock in your render budgets",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./jest": {
+      "types": "./dist/jest.d.ts",
+      "import": "./dist/jest.mjs",
+      "require": "./dist/jest.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "react",
+    "performance",
+    "testing",
+    "profiler",
+    "contracts",
+    "ci",
+    "github-actions",
+    "typescript",
+    "performance-testing",
+    "performance-monitoring",
+    "render",
+    "optimization",
+    "budget",
+    "perflock"
+  ],
+  "author": "samithahansaka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samithahansaka/perflock"
+  },
+  "homepage": "https://github.com/samithahansaka/perflock#readme",
+  "bugs": {
+    "url": "https://github.com/samithahansaka/perflock/issues"
+  },
+  "dependencies": {
+    "@actions/artifact": "5.0.2",
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "@babel/types": "^7.23.0",
+    "cosmiconfig": "^9.0.0",
+    "simple-statistics": "^7.8.0"
+  },
+  "peerDependencies": {
+    "@testing-library/react": ">=13.0.0",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@testing-library/react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/babel__traverse": "^7.20.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "jsdom": "^24.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^4.0.16"
+  }
+}

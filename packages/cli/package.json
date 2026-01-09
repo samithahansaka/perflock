@@ -1,0 +1,57 @@
+{
+  "name": "@samithahansaka/perflock-cli",
+  "version": "0.1.0",
+  "description": "CLI for @samithahansaka/perflock - performance contracts for React",
+  "bin": {
+    "perflock": "./dist/index.js",
+    "pl": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "echo \"No tests yet\"",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "react",
+    "performance",
+    "testing",
+    "cli",
+    "contracts",
+    "profiler",
+    "ci",
+    "github-actions",
+    "typescript",
+    "performance-testing",
+    "performance-monitoring",
+    "perflock"
+  ],
+  "author": "samithahansaka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samithahansaka/perflock"
+  },
+  "homepage": "https://github.com/samithahansaka/perflock#readme",
+  "dependencies": {
+    "@samithahansaka/perflock": "*",
+    "commander": "^12.0.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.0",
+    "inquirer": "^9.2.0",
+    "glob": "^10.3.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.0",
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  }
+}
