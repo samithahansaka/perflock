@@ -51,6 +51,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Copy README to package
+        run: cp README.md packages/core/README.md
+
       - name: Publish to npm
         run: npm publish --access public --provenance
         working-directory: packages/core
